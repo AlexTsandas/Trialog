@@ -7,6 +7,8 @@ import (
 	"os"
 
 	"github.com/AlexTsandas/Trialog/Backend/config"
+	"github.com/AlexTsandas/Trialog/Backend/routes"
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
 
@@ -24,7 +26,15 @@ func main() {
 		fmt.Println("Database connection successful!")
 	}
 	defer db.Close()
+	app := gin.Default()
 
-	fmt.Println("Hello, World!")
+	PORT := os.Getenv("PORT")
+	if PORT == "" {
+		PORT = "5000"
+	}
+	routes.SetupRoutes(app)
 
+	if err := app.Run(":" + PORT); err != nil {
+		log.Fatal(err)
+	}
 }

@@ -1,4 +1,5 @@
 context.txt
+/missions.txt
 # Dependencies and frontend builds
 node_modules/
 dist/
