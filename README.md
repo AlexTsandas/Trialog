@@ -36,3 +36,13 @@ Unlike traditional AI chat applications, Trialog allows multiple users to intera
 ## Project Goal
 
 Build a production-oriented messaging application while exploring real-time communication, backend architecture, AI integration, and cloud infrastructure.
+
+
+## Progress
+
+This is my first time building authentication with Go and PostgreSQL.
+So far, I’ve connected the backend to PostgreSQL, created the `users`
+table with Goose, and verified in Postman that signup saves new users
+with hashed passwords.
+
+Next, I’m building login and using an access token to protect a test route.
