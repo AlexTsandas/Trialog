@@ -25,6 +25,7 @@ func main() {
 	} else {
 		fmt.Println("Database connection successful!")
 	}
+	config.DB = db
 	defer db.Close()
 	app := gin.Default()
 
